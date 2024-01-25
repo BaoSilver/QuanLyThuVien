@@ -87,11 +87,11 @@
     <Compile Include="QLSach.Designer.cs">
       <DependentUpon>QLSach.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLTacgia.cs">
+    <Compile Include="QLChung.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLTacgia.Designer.cs">
-      <DependentUpon>QLTacgia.cs</DependentUpon>
+    <Compile Include="QLChung.Designer.cs">
+      <DependentUpon>QLChung.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
@@ -117,8 +117,8 @@
     <EmbeddedResource Include="QLSach.resx">
       <DependentUpon>QLSach.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLTacgia.resx">
-      <DependentUpon>QLTacgia.cs</DependentUpon>
+    <EmbeddedResource Include="QLChung.resx">
+      <DependentUpon>QLChung.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QLTV
 {
-    public partial class QLTacgia : Form
+    public partial class QLChung : Form
     {
-        public QLTacgia()
+        public QLChung()
         {
             InitializeComponent();
         }

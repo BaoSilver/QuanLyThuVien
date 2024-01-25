@@ -58,7 +58,7 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, -4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1161, 67);
+            this.label1.Size = new System.Drawing.Size(1362, 67);
             this.label1.TabIndex = 0;
             this.label1.Text = "CHI TIẾT PHIẾU MƯỢN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -67,7 +67,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(52, 81);
+            this.label2.Location = new System.Drawing.Point(101, 83);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 27);
             this.label2.TabIndex = 1;
@@ -77,7 +77,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(52, 143);
+            this.label3.Location = new System.Drawing.Point(101, 145);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 27);
             this.label3.TabIndex = 2;
@@ -87,7 +87,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(44, 212);
+            this.label4.Location = new System.Drawing.Point(93, 214);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(125, 27);
             this.label4.TabIndex = 3;
@@ -97,7 +97,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(603, 81);
+            this.label5.Location = new System.Drawing.Point(652, 83);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(95, 27);
             this.label5.TabIndex = 4;
@@ -107,7 +107,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(603, 167);
+            this.label6.Location = new System.Drawing.Point(652, 169);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(97, 27);
             this.label6.TabIndex = 5;
@@ -117,7 +117,7 @@
             // 
             this.Dtngaymuon.CustomFormat = "dd/MM/yyyy";
             this.Dtngaymuon.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dtngaymuon.Location = new System.Drawing.Point(175, 212);
+            this.Dtngaymuon.Location = new System.Drawing.Point(224, 214);
             this.Dtngaymuon.Name = "Dtngaymuon";
             this.Dtngaymuon.Size = new System.Drawing.Size(350, 35);
             this.Dtngaymuon.TabIndex = 6;
@@ -126,7 +126,7 @@
             // 
             this.DtNgaytra.CustomFormat = "dd/MM/yyyy";
             this.DtNgaytra.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DtNgaytra.Location = new System.Drawing.Point(723, 81);
+            this.DtNgaytra.Location = new System.Drawing.Point(772, 83);
             this.DtNgaytra.Name = "DtNgaytra";
             this.DtNgaytra.Size = new System.Drawing.Size(358, 35);
             this.DtNgaytra.TabIndex = 7;
@@ -134,7 +134,7 @@
             // txtmaphieu
             // 
             this.txtmaphieu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtmaphieu.Location = new System.Drawing.Point(175, 81);
+            this.txtmaphieu.Location = new System.Drawing.Point(224, 83);
             this.txtmaphieu.Name = "txtmaphieu";
             this.txtmaphieu.Size = new System.Drawing.Size(350, 35);
             this.txtmaphieu.TabIndex = 8;
@@ -142,7 +142,7 @@
             // txtmasach
             // 
             this.txtmasach.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtmasach.Location = new System.Drawing.Point(175, 140);
+            this.txtmasach.Location = new System.Drawing.Point(224, 142);
             this.txtmasach.Name = "txtmasach";
             this.txtmasach.Size = new System.Drawing.Size(350, 35);
             this.txtmasach.TabIndex = 9;
@@ -150,7 +150,7 @@
             // txtsoluong
             // 
             this.txtsoluong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtsoluong.Location = new System.Drawing.Point(723, 164);
+            this.txtsoluong.Location = new System.Drawing.Point(772, 166);
             this.txtsoluong.Name = "txtsoluong";
             this.txtsoluong.Size = new System.Drawing.Size(358, 35);
             this.txtsoluong.TabIndex = 10;
@@ -202,7 +202,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1209, 217);
+            this.dataGridView1.Size = new System.Drawing.Size(1377, 444);
             this.dataGridView1.TabIndex = 17;
             // 
             // Maphieu
@@ -259,7 +259,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1192, 635);
+            this.ClientSize = new System.Drawing.Size(1367, 795);
             this.Controls.Add(this.btnUpd);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.thoat1);

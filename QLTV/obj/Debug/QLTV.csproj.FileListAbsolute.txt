@@ -47,3 +47,12 @@ D:\QL_TV\QuanLyThuVien\QLTV\obj\Debug\QLTV.csproj.GenerateResource.cache
 D:\QL_TV\QuanLyThuVien\QLTV\obj\Debug\QLTV.csproj.CoreCompileInputs.cache
 D:\QL_TV\QuanLyThuVien\QLTV\obj\Debug\QLTV.exe
 D:\QL_TV\QuanLyThuVien\QLTV\obj\Debug\QLTV.pdb
+D:\QL_TV\QuanLyThuVien\QLTV\obj\Debug\QLTV.QLChung.resources
+D:\QL_TV\QuanLyThuVien\QLTV\bin\Debug\QLTV.exe.config
+D:\QL_TV\QuanLyThuVien\QLTV\bin\Debug\QLTV.exe
+D:\QL_TV\QuanLyThuVien\QLTV\bin\Debug\QLTV.pdb
+D:\QL_TV\QuanLyThuVien\QLTV\bin\Debug\EntityFramework.dll
+D:\QL_TV\QuanLyThuVien\QLTV\bin\Debug\EntityFramework.SqlServer.dll
+D:\QL_TV\QuanLyThuVien\QLTV\bin\Debug\EntityFramework.xml
+D:\QL_TV\QuanLyThuVien\QLTV\bin\Debug\EntityFramework.SqlServer.xml
+D:\QL_TV\QuanLyThuVien\QLTV\obj\Debug\QLTV.csproj.CopyComplete
