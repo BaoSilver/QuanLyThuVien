@@ -36,23 +36,23 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtmasach = new System.Windows.Forms.TextBox();
             this.txttensach = new System.Windows.Forms.TextBox();
-            this.txttentg = new System.Windows.Forms.TextBox();
             this.themcapnhat1 = new System.Windows.Forms.Button();
             this.xoa1 = new System.Windows.Forms.Button();
             this.thoat1 = new System.Windows.Forms.Button();
             this.dtgvQLS = new System.Windows.Forms.DataGridView();
-            this.timkiem = new System.Windows.Forms.Button();
-            this.cbTheloai = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtSoluong = new System.Windows.Forms.TextBox();
-            this.btnUpd = new System.Windows.Forms.Button();
-            this.cbNhaxb = new System.Windows.Forms.ComboBox();
             this.Masach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tensach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tentg = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Theloai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NhaXB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timkiem = new System.Windows.Forms.Button();
+            this.cbTheloai = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtSoluong = new System.Windows.Forms.TextBox();
+            this.btnUpd = new System.Windows.Forms.Button();
+            this.cbNhaxb = new System.Windows.Forms.ComboBox();
+            this.cbTacgia = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvQLS)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,15 +136,6 @@
             this.txttensach.TabIndex = 7;
             this.txttensach.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // txttentg
-            // 
-            this.txttentg.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttentg.Location = new System.Drawing.Point(429, 240);
-            this.txttentg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txttentg.Name = "txttentg";
-            this.txttentg.Size = new System.Drawing.Size(262, 35);
-            this.txttentg.TabIndex = 8;
-            // 
             // themcapnhat1
             // 
             this.themcapnhat1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -202,6 +193,54 @@
             this.dtgvQLS.Size = new System.Drawing.Size(1373, 401);
             this.dtgvQLS.TabIndex = 14;
             this.dtgvQLS.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvQLS_CellContentClick);
+            // 
+            // Masach
+            // 
+            this.Masach.HeaderText = "Mã sách";
+            this.Masach.MinimumWidth = 8;
+            this.Masach.Name = "Masach";
+            this.Masach.ReadOnly = true;
+            this.Masach.Width = 150;
+            // 
+            // Tensach
+            // 
+            this.Tensach.HeaderText = "Tên sách";
+            this.Tensach.MinimumWidth = 8;
+            this.Tensach.Name = "Tensach";
+            this.Tensach.ReadOnly = true;
+            this.Tensach.Width = 150;
+            // 
+            // Tentg
+            // 
+            this.Tentg.HeaderText = "Tên tác giả";
+            this.Tentg.MinimumWidth = 8;
+            this.Tentg.Name = "Tentg";
+            this.Tentg.ReadOnly = true;
+            this.Tentg.Width = 150;
+            // 
+            // Theloai
+            // 
+            this.Theloai.HeaderText = "Thể loại";
+            this.Theloai.MinimumWidth = 8;
+            this.Theloai.Name = "Theloai";
+            this.Theloai.ReadOnly = true;
+            this.Theloai.Width = 150;
+            // 
+            // NhaXB
+            // 
+            this.NhaXB.HeaderText = "Nhà XB";
+            this.NhaXB.MinimumWidth = 8;
+            this.NhaXB.Name = "NhaXB";
+            this.NhaXB.ReadOnly = true;
+            this.NhaXB.Width = 150;
+            // 
+            // Soluong
+            // 
+            this.Soluong.HeaderText = "Số lượng";
+            this.Soluong.MinimumWidth = 8;
+            this.Soluong.Name = "Soluong";
+            this.Soluong.ReadOnly = true;
+            this.Soluong.Width = 150;
             // 
             // timkiem
             // 
@@ -265,51 +304,13 @@
             this.cbNhaxb.Size = new System.Drawing.Size(266, 35);
             this.cbNhaxb.TabIndex = 18;
             // 
-            // Masach
+            // cbTacgia
             // 
-            this.Masach.HeaderText = "Mã sách";
-            this.Masach.MinimumWidth = 8;
-            this.Masach.Name = "Masach";
-            this.Masach.ReadOnly = true;
-            // 
-            // Tensach
-            // 
-            this.Tensach.HeaderText = "Tên sách";
-            this.Tensach.MinimumWidth = 8;
-            this.Tensach.Name = "Tensach";
-            this.Tensach.ReadOnly = true;
-            this.Tensach.Width = 150;
-            // 
-            // Tentg
-            // 
-            this.Tentg.HeaderText = "Tên tác giả";
-            this.Tentg.MinimumWidth = 8;
-            this.Tentg.Name = "Tentg";
-            this.Tentg.ReadOnly = true;
-            this.Tentg.Width = 150;
-            // 
-            // Theloai
-            // 
-            this.Theloai.HeaderText = "Thể loại";
-            this.Theloai.MinimumWidth = 8;
-            this.Theloai.Name = "Theloai";
-            this.Theloai.ReadOnly = true;
-            this.Theloai.Width = 150;
-            // 
-            // NhaXB
-            // 
-            this.NhaXB.HeaderText = "Nhà XB";
-            this.NhaXB.MinimumWidth = 8;
-            this.NhaXB.Name = "NhaXB";
-            this.NhaXB.ReadOnly = true;
-            this.NhaXB.Width = 150;
-            // 
-            // Soluong
-            // 
-            this.Soluong.HeaderText = "Số lượng";
-            this.Soluong.MinimumWidth = 8;
-            this.Soluong.Name = "Soluong";
-            this.Soluong.ReadOnly = true;
+            this.cbTacgia.FormattingEnabled = true;
+            this.cbTacgia.Location = new System.Drawing.Point(429, 240);
+            this.cbTacgia.Name = "cbTacgia";
+            this.cbTacgia.Size = new System.Drawing.Size(262, 28);
+            this.cbTacgia.TabIndex = 19;
             // 
             // QLSach
             // 
@@ -317,6 +318,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FloralWhite;
             this.ClientSize = new System.Drawing.Size(1367, 795);
+            this.Controls.Add(this.cbTacgia);
             this.Controls.Add(this.cbNhaxb);
             this.Controls.Add(this.cbTheloai);
             this.Controls.Add(this.timkiem);
@@ -326,7 +328,6 @@
             this.Controls.Add(this.xoa1);
             this.Controls.Add(this.themcapnhat1);
             this.Controls.Add(this.txtSoluong);
-            this.Controls.Add(this.txttentg);
             this.Controls.Add(this.txttensach);
             this.Controls.Add(this.txtmasach);
             this.Controls.Add(this.label8);
@@ -357,7 +358,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtmasach;
         private System.Windows.Forms.TextBox txttensach;
-        private System.Windows.Forms.TextBox txttentg;
         private System.Windows.Forms.Button themcapnhat1;
         private System.Windows.Forms.Button xoa1;
         private System.Windows.Forms.Button thoat1;
@@ -374,5 +374,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Theloai;
         private System.Windows.Forms.DataGridViewTextBoxColumn NhaXB;
         private System.Windows.Forms.DataGridViewTextBoxColumn Soluong;
+        private System.Windows.Forms.ComboBox cbTacgia;
     }
 }

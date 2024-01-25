@@ -56,3 +56,23 @@ D:\QL_TV\QuanLyThuVien\QLTV\bin\Debug\EntityFramework.SqlServer.dll
 D:\QL_TV\QuanLyThuVien\QLTV\bin\Debug\EntityFramework.xml
 D:\QL_TV\QuanLyThuVien\QLTV\bin\Debug\EntityFramework.SqlServer.xml
 D:\QL_TV\QuanLyThuVien\QLTV\obj\Debug\QLTV.csproj.CopyComplete
+D:\Testing Github\QuanLyThuVien\QLTV\bin\Debug\QLTV.exe.config
+D:\Testing Github\QuanLyThuVien\QLTV\bin\Debug\QLTV.exe
+D:\Testing Github\QuanLyThuVien\QLTV\bin\Debug\QLTV.pdb
+D:\Testing Github\QuanLyThuVien\QLTV\bin\Debug\EntityFramework.dll
+D:\Testing Github\QuanLyThuVien\QLTV\bin\Debug\EntityFramework.SqlServer.dll
+D:\Testing Github\QuanLyThuVien\QLTV\bin\Debug\EntityFramework.xml
+D:\Testing Github\QuanLyThuVien\QLTV\bin\Debug\EntityFramework.SqlServer.xml
+D:\Testing Github\QuanLyThuVien\QLTV\obj\Debug\QLTV.csproj.AssemblyReference.cache
+D:\Testing Github\QuanLyThuVien\QLTV\obj\Debug\QLTV.DangNhap.resources
+D:\Testing Github\QuanLyThuVien\QLTV\obj\Debug\QLTV.QLDocgia.resources
+D:\Testing Github\QuanLyThuVien\QLTV\obj\Debug\QLTV.HeThongQuanLyThuVien.resources
+D:\Testing Github\QuanLyThuVien\QLTV\obj\Debug\QLTV.QLPhieumuon.resources
+D:\Testing Github\QuanLyThuVien\QLTV\obj\Debug\QLTV.Properties.Resources.resources
+D:\Testing Github\QuanLyThuVien\QLTV\obj\Debug\QLTV.QLSach.resources
+D:\Testing Github\QuanLyThuVien\QLTV\obj\Debug\QLTV.QLChung.resources
+D:\Testing Github\QuanLyThuVien\QLTV\obj\Debug\QLTV.csproj.GenerateResource.cache
+D:\Testing Github\QuanLyThuVien\QLTV\obj\Debug\QLTV.csproj.CoreCompileInputs.cache
+D:\Testing Github\QuanLyThuVien\QLTV\obj\Debug\QLTV.csproj.CopyComplete
+D:\Testing Github\QuanLyThuVien\QLTV\obj\Debug\QLTV.exe
+D:\Testing Github\QuanLyThuVien\QLTV\obj\Debug\QLTV.pdb
