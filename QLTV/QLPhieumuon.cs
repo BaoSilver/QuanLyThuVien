@@ -15,13 +15,18 @@ namespace QLTV
         public QLPhieumuon()
         {
             InitializeComponent();
-            Dtngaymuon.Format = DateTimePickerFormat.Custom;
-            Dtngaymuon.CustomFormat = "dd/MM/yyyy";
-            DtNgaytra.Format = DateTimePickerFormat.Custom;
-            DtNgaytra.CustomFormat = "dd/MM/yyyy";
+            //Dtngaymuon.Format = DateTimePickerFormat.Custom;
+            //Dtngaymuon.CustomFormat = "dd/MM/yyyy";
+            //DtNgaytra.Format = DateTimePickerFormat.Custom;
+            //DtNgaytra.CustomFormat = "dd/MM/yyyy";
         }
 
         private void themcapnhat1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void QLPhieumuon_Load(object sender, EventArgs e)
         {
 
         }

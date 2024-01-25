@@ -279,6 +279,7 @@
             this.Name = "QLPhieumuon";
             this.Text = "Phieumuon";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.QLPhieumuon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -306,10 +306,11 @@
             // 
             // cbTacgia
             // 
+            this.cbTacgia.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTacgia.FormattingEnabled = true;
             this.cbTacgia.Location = new System.Drawing.Point(429, 240);
             this.cbTacgia.Name = "cbTacgia";
-            this.cbTacgia.Size = new System.Drawing.Size(262, 28);
+            this.cbTacgia.Size = new System.Drawing.Size(262, 35);
             this.cbTacgia.TabIndex = 19;
             // 
             // QLSach
