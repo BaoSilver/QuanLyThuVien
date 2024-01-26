@@ -8,14 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using QLTV.Modelsss;
+using QLTV.lib.model;
 
 namespace QLTV
 {
 
     public partial class QLDocgia : Form
     {
-       // ContextModelsssDB db = new ContextModelsssDB();
+        LibContextModelDB db = new LibContextModelDB();
         public QLDocgia()
         {
             InitializeComponent();

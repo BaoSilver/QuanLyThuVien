@@ -61,6 +61,14 @@
     <Compile Include="DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="lib.model\Docgia.cs" />
+    <Compile Include="lib.model\LibContextModelDB.cs" />
+    <Compile Include="lib.model\NhaXB.cs" />
+    <Compile Include="lib.model\Sach.cs" />
+    <Compile Include="lib.model\Tacgia.cs" />
+    <Compile Include="lib.model\Taikhoan.cs" />
+    <Compile Include="lib.model\Theloai.cs" />
+    <Compile Include="lib.model\Thuthu.cs" />
     <Compile Include="QLDocgia.cs">
       <SubType>Form</SubType>
     </Compile>
