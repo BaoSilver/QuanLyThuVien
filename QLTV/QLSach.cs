@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Infrastructure;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -37,7 +38,7 @@ namespace QLTV
                 int index = dtgvQLS.Rows.Add();
                 dtgvQLS.Rows[index].Cells[0].Value = iterm.Masach;
                 dtgvQLS.Rows[index].Cells[1].Value = iterm.Tensach;
-                dtgvQLS.Rows[index].Cells[2].Value = iterm.Tacgia.MaTG;
+                dtgvQLS.Rows[index].Cells[2].Value = iterm.Tacgia.TenTG;
                 dtgvQLS.Rows[index].Cells[3].Value = iterm.Theloai.Tenloai;
                 dtgvQLS.Rows[index].Cells[4].Value = iterm.NhaXB.TenNhaxb;
                 dtgvQLS.Rows[index].Cells[5].Value = iterm.Soluong;
@@ -76,21 +77,33 @@ namespace QLTV
 
         private void themcapnhat1_Click(object sender, EventArgs e)
         {
-            string masachValue = txtmasach.Text.Trim();
-            string tensachValue = txttensach.Text.Trim();
-            string tentgValue = cbTacgia.Text.Trim();
-            string theloaiValue = cbTheloai.Text.Trim();
-            string nhaxbValue = cbNhaxb.Text.Trim();
-            int soluongValue = int.Parse(txtSoluong.Text.Trim());
-
-            // Kiểm tra xem người dùng đã nhập đầy đủ thông tin sách chưa.
-            if (string.IsNullOrEmpty(masachValue) || string.IsNullOrEmpty(tensachValue) || string.IsNullOrEmpty(theloaiValue) || string.IsNullOrEmpty(nhaxbValue) || string.IsNullOrEmpty(tentgValue))
+            if (string.IsNullOrEmpty(txtmasach.Text) ||
+       string.IsNullOrEmpty(txttensach.Text) ||
+       string.IsNullOrEmpty(cbTheloai.Text) ||
+       string.IsNullOrEmpty(cbNhaxb.Text) ||
+       string.IsNullOrEmpty(cbTacgia.Text) ||
+       string.IsNullOrEmpty(txtSoluong.Text))
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin sách.");
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin sách.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            // Kiểm tra xem mã sách là số nguyên và không trùng lặp.
+            string masachValue = txtmasach.Text.Trim();
+            string tensachValue = txttensach.Text.Trim();
+            string theloaiValue = cbTheloai.SelectedValue?.ToString();
+            string nhaxbValue = cbNhaxb.SelectedValue?.ToString();
+            string tentacgiaValue = cbTacgia.SelectedValue?.ToString();
+            int soluongValue;
+            if (!int.TryParse(txtSoluong.Text.Trim(), out soluongValue))
+            {
+                MessageBox.Show("Số lượng không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            int mnhaxb;
+            if (!int.TryParse(nhaxbValue, out mnhaxb))
+            {
+                MessageBox.Show("Mã Nhà xuất bản không hợp lệ. Vui lòng nhập số nguyên.");
+                return;
+            }
             int masach;
             if (!int.TryParse(masachValue, out masach))
             {
@@ -99,29 +112,23 @@ namespace QLTV
             }
             if (db.Saches.Any(sach => sach.Masach == masach))
             {
-                MessageBox.Show("Mã sách đã tồn tại. Vui lòng nhập một mã khác.");
+                MessageBox.Show("Mã sách đã tồn tại. Vui lòng nhập một mã khác.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            // Thêm sách mới vào cơ sở dữ liệu.
             Sach newSach = new Sach
             {
                 Masach = masach,
                 Tensach = tensachValue,
-                MaTG = tentgValue,
                 Maloai = theloaiValue,
-                Manhaxb = int.Parse(nhaxbValue),
+                Manhaxb = mnhaxb,
+                MaTG = tentacgiaValue,
                 Soluong = soluongValue,
             };
             db.Saches.Add(newSach);
             db.SaveChanges();
-
-            // Cập nhật danh sách sách trên DataGridView.
-            List<Sach> sachl = db.Saches.ToList();
-            FillgridSach(sachl);
-
-            // Hiển thị thông báo thành công.
-            MessageBox.Show("Đã thêm sách mới thành công!");
+            List<Sach> dss = db.Saches.ToList();
+            FillgridSach(dss);
+            MessageBox.Show("Đã thêm sách mới thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -131,83 +138,88 @@ namespace QLTV
 
         private void xoa1_Click(object sender, EventArgs e)
         {
-            //if (dtgvQLS.SelectedRows.Count > 0)
-            //{
-            //    DataGridViewRow selectedRow = dtgvQLS.SelectedRows[0];
-            //    if (int.TryParse(selectedRow.Cells["Masach"].Value.ToString(), out int masach))
-            //    {
-            //        var mas = db.Saches.SingleOrDefault(id => id.Masach == masach);
-            //        db.Saches.Remove(mas);
-            //        db.SaveChanges();
-            //        List<Sach> QuanLySach = db.Saches.ToList();
-            //        FillgridSach(QuanLySach);
-            //        MessageBox.Show("Đã xóa sách thành công!");
-            //    }
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Vui lòng chọn sách để xóa.");
-            //}
+            if (dtgvQLS.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dtgvQLS.SelectedRows[0];
+                if (int.TryParse(selectedRow.Cells["Masach"].Value.ToString(), out int masach))
+                {
+                    var mas = db.Saches.SingleOrDefault(id => id.Masach == masach);
+                    db.Saches.Remove(mas);
+                    db.SaveChanges();
+                    List<Sach> QuanLySach = db.Saches.ToList();
+                    FillgridSach(QuanLySach);
+                    MessageBox.Show("Đã xóa sách thành công!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn sách để xóa.");
+            }
         }
 
         private void dtgvQLS_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            //if (e.RowIndex >= 0)
-            //{
-            //    DataGridViewRow selectedRow = dtgvQLS.Rows[e.RowIndex];
-            //    string mas = selectedRow.Cells["Masach"].Value.ToString();
-            //    txtmasach.Text = mas;
-            //    string tens = selectedRow.Cells["Tensach"].Value.ToString();
-            //    txttensach.Text = tens;
-            //    string tentg = selectedRow.Cells["Tentg"].Value.ToString();
-            //    txttentg.Text = tentg;
-            //    string thel = selectedRow.Cells["Theloai"].Value.ToString();
-            //    cbTheloai.Text = thel;
-            //    string nhaxb = selectedRow.Cells["NhaXB"].Value.ToString();
-            //    txtNhaxb.Text = nhaxb;
-            //    string sol = selectedRow.Cells["Soluong"].Value.ToString();
-            //    txtSoluong.Text = sol;
-            //}
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dtgvQLS.Rows[e.RowIndex];
+                string mas = selectedRow.Cells["Masach"].Value.ToString();
+                txtmasach.Text = mas;
+                string tens = selectedRow.Cells["Tensach"].Value.ToString();
+                txttensach.Text = tens;
+                string tentg = selectedRow.Cells["Tentg"].Value.ToString();
+                cbTacgia.Text = tentg;
+                string thel = selectedRow.Cells["Theloai"].Value.ToString();
+                cbTheloai.Text = thel;
+                string nhaxb = selectedRow.Cells["NhaXB"].Value.ToString();
+                cbNhaxb.Text = nhaxb;
+                string sol = selectedRow.Cells["Soluong"].Value.ToString();
+                txtSoluong.Text = sol;
+            }
         }
 
         private void btnUpd_Click(object sender, EventArgs e)
         {
-            //string masachValue = txtmasach.Text.Trim();
-            //string tensachValue = txttensach.Text.Trim();
-            //string theloaiValue = cbTheloai.Text.Trim();
-            //string nhaxbValue = txtNhaxb.Text.Trim();
-            //string tentacgiaValue = txttentg.Text.Trim();
-            //int soluongValue = int.Parse(txtSoluong.Text.Trim());
-            //if (int.TryParse(txtSoluong.Text.Trim(), out soluongValue)) 
-            //{
-            //    if (int.TryParse(masachValue, out int masach))
-            //    {
-            //        Sach existing = db.Saches.SingleOrDefault(p => p.Masach == masach);
-            //        if (existing != null)
-            //        {
-            //            existing.Masach = masach; 
-            //            existing.Tensach = tensachValue;
-            //            existing.Theloai = theloaiValue;
-            //            existing.NhaXB = nhaxbValue;
-            //            existing.TenTG = tentacgiaValue;
-            //            existing.Soluong = soluongValue;
-            //            db.SaveChanges();
-            //            MessageBox.Show("Đã cập nhật thông tin sách thành công!");
-            //            List<Sach> dm = db.Saches.ToList();
-            //            FillgridSach(dm);
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("Sách không tồn tại trong cơ sở dữ liệu.");
-            //        }
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Vui lòng nhập Mã sách hợp lệ (số nguyên).");
-            //    }
-            //}
+            string masachValue = txtmasach.Text.Trim();
+
+            if (int.TryParse(masachValue, out int masach))
+            {
+
+                var existingBook = db.Saches.SingleOrDefault(book => book.Masach == masach);
+
+                if (existingBook != null)
+                {
+                    string tensach = txttensach.Text.Trim();
+                    string theloai = cbTheloai.SelectedValue?.ToString();
+                    string nhaxb = cbNhaxb.SelectedValue?.ToString();
+                    string tentacgia = cbTacgia.SelectedValue?.ToString();
+                    int soluong;
+
+                    if (!int.TryParse(txtSoluong.Text.Trim(), out soluong))
+                    {
+                        MessageBox.Show("Vui lòng nhập số lượng hợp lệ.");
+                        return;
+                    }
+                    existingBook.Tensach = tensach;
+                    existingBook.Maloai = theloai;
+                    existingBook.Manhaxb = int.Parse(nhaxb);
+                    existingBook.MaTG = tentacgia;
+                    existingBook.Soluong = soluong;
+                    db.SaveChanges();
+
+                    List<Sach> dss = db.Saches.ToList();
+                    FillgridSach(dss);
+
+                    MessageBox.Show("Đã cập nhật thông tin sách thành công!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy sách có mã tương ứng để cập nhật.");
+            }
+        }
         }
     }
-}
+
+
 
