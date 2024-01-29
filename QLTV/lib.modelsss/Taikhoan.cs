@@ -1,4 +1,4 @@
-namespace QLTV.lib.model
+namespace QLTV.lib.modelsss
 {
     using System;
     using System.Collections.Generic;
@@ -6,23 +6,23 @@ namespace QLTV.lib.model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("NhaXB")]
-    public partial class NhaXB
+    [Table("Taikhoan")]
+    public partial class Taikhoan
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public NhaXB()
+        public Taikhoan()
         {
-            Saches = new HashSet<Sach>();
+            Thuthus = new HashSet<Thuthu>();
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Manhaxb { get; set; }
-
         [StringLength(255)]
-        public string TenNhaxb { get; set; }
+        public string email { get; set; }
+
+        [StringLength(20)]
+        public string password { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Sach> Saches { get; set; }
+        public virtual ICollection<Thuthu> Thuthus { get; set; }
     }
 }

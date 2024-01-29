@@ -8,6 +8,7 @@ CREATE TABLE Docgia (
     Ngaysinh DATE,
     Gioitinh NVARCHAR(10),
     Diachi NVARCHAR(255),
+	Sodt int,
 );
 CREATE TABLE Sach 
 (
@@ -38,8 +39,6 @@ create table Tacgia
 (
 	MaTG Nvarchar(50) primary key,
 	TenTG nvarchar (255),
-	Ngaysinh nvarchar(50),
-	Gioitinh Nvarchar(10),
 );
 create table Theloai 
 (
@@ -51,4 +50,21 @@ create table Theloai
 	Manhaxb int primary key ,
 	TenNhaxb nvarchar(255)
 );
+-- Tạo bảng "Phieumuon"
 
+
+-- Tạo bảng "Chitietphieumuon" với khóa ngoại tham chiếu đến "Phieumuon"
+CREATE TABLE Chitietphieumuon
+(
+    ID INT PRIMARY KEY,
+    Maphieu INT,
+    Masach INT,
+    Soluongmuon INT,
+    FOREIGN KEY (Maphieu) REFERENCES Phieumuon(Maphieu),
+    FOREIGN KEY (Masach) REFERENCES Sach(Masach)
+    -- Các trường khác
+);
+
+
+
+delete  Docgia

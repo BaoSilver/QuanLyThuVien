@@ -1,4 +1,4 @@
-namespace QLTV.lib.model
+namespace QLTV.lib.modelsss
 {
     using System;
     using System.Collections.Generic;
@@ -9,6 +9,12 @@ namespace QLTV.lib.model
     [Table("Sach")]
     public partial class Sach
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Sach()
+        {
+            Phieumuons = new HashSet<Phieumuon>();
+        }
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Masach { get; set; }
@@ -27,6 +33,9 @@ namespace QLTV.lib.model
         public int? Soluong { get; set; }
 
         public virtual NhaXB NhaXB { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Phieumuon> Phieumuons { get; set; }
 
         public virtual Theloai Theloai { get; set; }
 

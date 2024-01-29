@@ -1,4 +1,4 @@
-namespace QLTV.lib.model
+namespace QLTV.lib.modelsss
 {
     using System;
     using System.Collections.Generic;
@@ -6,21 +6,21 @@ namespace QLTV.lib.model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Theloai")]
-    public partial class Theloai
+    [Table("NhaXB")]
+    public partial class NhaXB
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Theloai()
+        public NhaXB()
         {
             Saches = new HashSet<Sach>();
         }
 
         [Key]
-        [StringLength(50)]
-        public string Maloai { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int Manhaxb { get; set; }
 
         [StringLength(255)]
-        public string Tenloai { get; set; }
+        public string TenNhaxb { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Sach> Saches { get; set; }

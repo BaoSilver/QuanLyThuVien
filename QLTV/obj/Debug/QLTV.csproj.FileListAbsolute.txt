@@ -47,7 +47,6 @@ D:\QL_TV\QuanLyThuVien\QLTV\obj\Debug\QLTV.csproj.GenerateResource.cache
 D:\QL_TV\QuanLyThuVien\QLTV\obj\Debug\QLTV.csproj.CoreCompileInputs.cache
 D:\QL_TV\QuanLyThuVien\QLTV\obj\Debug\QLTV.exe
 D:\QL_TV\QuanLyThuVien\QLTV\obj\Debug\QLTV.pdb
-D:\QL_TV\QuanLyThuVien\QLTV\obj\Debug\QLTV.QLChung.resources
 D:\QL_TV\QuanLyThuVien\QLTV\bin\Debug\QLTV.exe.config
 D:\QL_TV\QuanLyThuVien\QLTV\bin\Debug\QLTV.exe
 D:\QL_TV\QuanLyThuVien\QLTV\bin\Debug\QLTV.pdb
@@ -76,3 +75,6 @@ D:\Testing Github\QuanLyThuVien\QLTV\obj\Debug\QLTV.csproj.CoreCompileInputs.cac
 D:\Testing Github\QuanLyThuVien\QLTV\obj\Debug\QLTV.csproj.CopyComplete
 D:\Testing Github\QuanLyThuVien\QLTV\obj\Debug\QLTV.exe
 D:\Testing Github\QuanLyThuVien\QLTV\obj\Debug\QLTV.pdb
+D:\QL_TV\QuanLyThuVien\QLTV\obj\Debug\QLTV.QLNhaxb.resources
+D:\QL_TV\QuanLyThuVien\QLTV\obj\Debug\QLTV.QLTheloai.resources
+D:\QL_TV\QuanLyThuVien\QLTV\obj\Debug\QLTV.QLTacgia.resources

@@ -36,13 +36,6 @@ namespace QLTV
             QLPhieumuon phieumuon = new QLPhieumuon();
             phieumuon.MdiParent = this;
             phieumuon.Show();
-        }
-
-        private void quảnLýTácGiảThểLoạiNhàXuấtBảnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            QLChung qLChung = new QLChung();
-            qLChung.MdiParent = this;
-            qLChung.Show();
-        }
+        }    
     }
 }

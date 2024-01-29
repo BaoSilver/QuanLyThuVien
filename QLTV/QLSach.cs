@@ -9,13 +9,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QLTV.lib.model;
+using QLTV.lib.modelsss;
 
 namespace QLTV
 {
     public partial class QLSach : Form
     {
-        LibContextModelDB db = new LibContextModelDB();
+        LibModelsssContextDB db = new LibModelsssContextDB();
         public QLSach()
         {
             InitializeComponent();
@@ -160,22 +160,7 @@ namespace QLTV
         private void dtgvQLS_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow selectedRow = dtgvQLS.Rows[e.RowIndex];
-                string mas = selectedRow.Cells["Masach"].Value.ToString();
-                txtmasach.Text = mas;
-                string tens = selectedRow.Cells["Tensach"].Value.ToString();
-                txttensach.Text = tens;
-                string tentg = selectedRow.Cells["Tentg"].Value.ToString();
-                cbTacgia.Text = tentg;
-                string thel = selectedRow.Cells["Theloai"].Value.ToString();
-                cbTheloai.Text = thel;
-                string nhaxb = selectedRow.Cells["NhaXB"].Value.ToString();
-                cbNhaxb.Text = nhaxb;
-                string sol = selectedRow.Cells["Soluong"].Value.ToString();
-                txtSoluong.Text = sol;
-            }
+           
         }
 
         private void btnUpd_Click(object sender, EventArgs e)
@@ -218,8 +203,79 @@ namespace QLTV
                 MessageBox.Show("Không tìm thấy sách có mã tương ứng để cập nhật.");
             }
         }
+
+        private void dtgvQLS_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dtgvQLS.Rows[e.RowIndex];
+                string mas = selectedRow.Cells["Masach"].Value.ToString();
+                txtmasach.Text = mas;
+                string tens = selectedRow.Cells["Tensach"].Value.ToString();
+                txttensach.Text = tens;
+                string tentg = selectedRow.Cells["Tentg"].Value.ToString();
+                cbTacgia.Text = tentg;
+                string thel = selectedRow.Cells["Theloai"].Value.ToString();
+                cbTheloai.Text = thel;
+                string nhaxb = selectedRow.Cells["NhaXB"].Value.ToString();
+                cbNhaxb.Text = nhaxb;
+                string sol = selectedRow.Cells["Soluong"].Value.ToString();
+                txtSoluong.Text = sol;
+            }
         }
+
+        private void btnTacgia_Click(object sender, EventArgs e)
+        {
+            QLTacgia qLTacgia = new QLTacgia();
+            qLTacgia.Show();
+        }
+
+        private void btnTheloai_Click(object sender, EventArgs e)
+        {
+            QLTheloai qLTheloai = new QLTheloai();
+            qLTheloai.Show();
+        }
+
+        private void btnNhaxb_Click(object sender, EventArgs e)
+        {
+            QLNhaxb qLNhaxb = new QLNhaxb();
+            qLNhaxb.Show();
+        }
+
+        private void timkiem_Click(object sender, EventArgs e)
+        {
+            //string tuKhoa = txtSearch.Text.Trim();
+            //string loaiTimKiem = cbSearch.SelectedItem?.ToString();
+            //if (string.IsNullOrEmpty(tuKhoa) || string.IsNullOrEmpty(loaiTimKiem))
+            //{
+            //    MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm và chọn loại tìm kiếm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
+            //List<Sach> ketQuaTimKiem = new List<Sach>();
+            //if (loaiTimKiem == "Mã Sách")
+            //{
+            //    ketQuaTimKiem = db.Saches
+            //        .Where(sach => sach.Masach.Contains(tuKhoa))
+            //        .ToList();
+            //}
+            //else if (loaiTimKiem == "Tên Sách")
+            //{
+            //    ketQuaTimKiem = db.Saches
+            //        .Where(sach => sach.Tensach.Contains(tuKhoa))
+            //        .ToList();
+            //}
+            //fillGridSach(ketQuaTimKiem);
+            //if (ketQuaTimKiem.Count == 0)
+            //{
+            //    MessageBox.Show("Không tìm thấy sách với từ khóa tìm kiếm đã nhập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
+        }
+
+        }
+        
+      
     }
+
 
 
 

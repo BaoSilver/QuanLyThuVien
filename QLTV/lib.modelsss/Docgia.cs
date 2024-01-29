@@ -1,4 +1,4 @@
-namespace QLTV.lib.model
+namespace QLTV.lib.modelsss
 {
     using System;
     using System.Collections.Generic;
@@ -6,29 +6,34 @@ namespace QLTV.lib.model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Tacgia")]
-    public partial class Tacgia
+    [Table("Docgia")]
+    public partial class Docgia
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Tacgia()
+        public Docgia()
         {
-            Saches = new HashSet<Sach>();
+            Phieumuons = new HashSet<Phieumuon>();
         }
 
         [Key]
-        [StringLength(50)]
-        public string MaTG { get; set; }
-
-        [StringLength(255)]
-        public string TenTG { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int MaDG { get; set; }
 
         [StringLength(50)]
-        public string Ngaysinh { get; set; }
+        public string TenDG { get; set; }
+
+        [Column(TypeName = "date")]
+        public DateTime? Ngaysinh { get; set; }
 
         [StringLength(10)]
         public string Gioitinh { get; set; }
 
+        [StringLength(255)]
+        public string Diachi { get; set; }
+
+        public int? Sodt { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Sach> Saches { get; set; }
+        public virtual ICollection<Phieumuon> Phieumuons { get; set; }
     }
 }

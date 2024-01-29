@@ -3,17 +3,18 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 
-namespace QLTV.lib.model
+namespace QLTV.lib.modelsss
 {
-    public partial class LibContextModelDB : DbContext
+    public partial class LibModelsssContextDB : DbContext
     {
-        public LibContextModelDB()
-            : base("name=LibContextModelDB")
+        public LibModelsssContextDB()
+            : base("name=LibModelsssContextDB")
         {
         }
 
         public virtual DbSet<Docgia> Docgias { get; set; }
         public virtual DbSet<NhaXB> NhaXBs { get; set; }
+        public virtual DbSet<Phieumuon> Phieumuons { get; set; }
         public virtual DbSet<Sach> Saches { get; set; }
         public virtual DbSet<Tacgia> Tacgias { get; set; }
         public virtual DbSet<Taikhoan> Taikhoans { get; set; }
