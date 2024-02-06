@@ -28,8 +28,6 @@ namespace QLTV
         {
             try
             {
-
-
                 string maPhieuMuon = txtmaphieu.Text.Trim();
                 string maSachString = cbbmasach.SelectedValue?.ToString(); // Lưu ý: sử dụng ?. để tránh lỗi nếu SelectedValue là null
                 string maDocGiaString = cbTendg.SelectedValue?.ToString(); // Lưu ý: sử dụng ?. để tránh lỗi nếu SelectedValue là null
@@ -41,8 +39,14 @@ namespace QLTV
                     return;
                 }
 
-                DateTime ngayMuon = Dtngaymuon.Value;
-                DateTime? ngayTra = Dtngaymuon.Checked ? DtNgaytra.Value : (DateTime?)null;
+                DateTime ngayMuon = DateTime.Now;
+                DateTime ngayTra = ngayMuon.AddDays(14);
+                DateTimePicker ngayMuonPicker = Dtngaymuon;
+                DateTimePicker ngayTraPicker = DtNgaytra;
+
+                // Gán giá trị ngày mượn và ngày trả cho DateTimePicker
+                ngayMuonPicker.Value = ngayMuon;
+                ngayTraPicker.Value = ngayTra;
 
                 int maSach, maDocGia;
 
@@ -92,6 +96,12 @@ namespace QLTV
 
                 List<Phieumuon> dss = db.Phieumuons.ToList();
                 fillGriddsmuon(dss);
+                txtmaphieu.Text = string.Empty;
+                cbbmasach.SelectedIndex = -1;
+                cbTendg.SelectedIndex = -1;
+                txtsoluong.Text = string.Empty;
+                Dtngaymuon.Value = DateTime.Now;
+                DtNgaytra.Value = DateTime.Now.AddDays(14);
 
                 MessageBox.Show("Đã mượn sách thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -105,16 +115,11 @@ namespace QLTV
                 {
                     // Hiển thị thông báo lỗi chi tiết
                     MessageBox.Show($"Lỗi: {innerException.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    // Nếu không có inner exception, hiển thị thông báo lỗi chung
-                    MessageBox.Show("Lỗi khi cập nhật dữ liệu.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
 
+                }
             }
         }
-        private void fillCbSach(List<Sach> dss)
+                private void fillCbSach(List<Sach> dss)
         {
             this.cbbmasach.DataSource = dss;
             this.cbbmasach.DisplayMember = "TenSach";
@@ -149,6 +154,8 @@ namespace QLTV
             fillCbSach(sach);
             List<Docgia> dg = db.Docgias.ToList();
             fillCbDG(dg);
+            Dtngaymuon.Value = DateTime.Now;
+            DtNgaytra.Value = DateTime.Now.AddDays(14);
         }
 
         private void dtgPhieumuon_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -184,26 +191,28 @@ namespace QLTV
         {
             string maPhieuMuon = txtmaphieu.Text.Trim();
 
-            var muonSach = db.Phieumuons.FirstOrDefault(qpm => qpm.Maphieu == maPhieuMuon);
+            // Sửa lỗi CS0019 ở dòng 187: Chuyển đổi kiểu int sang string
+            var muonSach = db.Phieumuons.FirstOrDefault(qpm => qpm.Maphieu.ToString() == maPhieuMuon);
 
             if (muonSach != null)
             {
-                string maSach = muonSach.MaSach;
+                string maSach = muonSach.Masach.ToString();
                 int soLuongMuon;
-                if (muonSach.SoLuong.HasValue)
+                if (muonSach.Soluong.HasValue)
                 {
-                    soLuongMuon = muonSach.SoLuong.Value;
+                    soLuongMuon = muonSach.Soluong.Value;
                 }
                 else
                 {
                     soLuongMuon = 0;
                 }
 
-                var sach = db.Saches.FirstOrDefault(s => s.Masach == maSach);
+                // Sửa lỗi CS0019 ở dòng 202: Chuyển đổi kiểu int sang string
+                var sach = db.Saches.FirstOrDefault(s => s.Masach.ToString() == maSach);
 
                 if (sach != null)
                 {
-                    sach.SoLuong += soLuongMuon;
+                    sach.Soluong += soLuongMuon;
                     db.Phieumuons.Remove(muonSach);
                     db.SaveChanges();
 
@@ -221,6 +230,7 @@ namespace QLTV
             {
                 MessageBox.Show("Không tìm thấy phiếu mượn để xóa.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
     }
 }
