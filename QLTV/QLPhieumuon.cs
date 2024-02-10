@@ -190,8 +190,6 @@ namespace QLTV
         private void xoa1_Click(object sender, EventArgs e)
         {
             string maPhieuMuon = txtmaphieu.Text.Trim();
-
-            // Sửa lỗi CS0019 ở dòng 187: Chuyển đổi kiểu int sang string
             var muonSach = db.Phieumuons.FirstOrDefault(qpm => qpm.Maphieu.ToString() == maPhieuMuon);
 
             if (muonSach != null)
@@ -230,6 +228,11 @@ namespace QLTV
             {
                 MessageBox.Show("Không tìm thấy phiếu mượn để xóa.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+        }
+
+        private void dtgPhieumuon_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

@@ -114,6 +114,24 @@
     <Compile Include="QLTheloai.Designer.cs">
       <DependentUpon>QLTheloai.cs</DependentUpon>
     </Compile>
+    <Compile Include="TKDocgia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TKDocgia.Designer.cs">
+      <DependentUpon>TKDocgia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TKSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TKSach.Designer.cs">
+      <DependentUpon>TKSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TKTacgia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TKTacgia.Designer.cs">
+      <DependentUpon>TKTacgia.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,6 +164,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QLTheloai.resx">
       <DependentUpon>QLTheloai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TKDocgia.resx">
+      <DependentUpon>TKDocgia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TKSach.resx">
+      <DependentUpon>TKSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TKTacgia.resx">
+      <DependentUpon>TKTacgia.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

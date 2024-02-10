@@ -78,3 +78,6 @@ D:\Testing Github\QuanLyThuVien\QLTV\obj\Debug\QLTV.pdb
 D:\QL_TV\QuanLyThuVien\QLTV\obj\Debug\QLTV.QLNhaxb.resources
 D:\QL_TV\QuanLyThuVien\QLTV\obj\Debug\QLTV.QLTheloai.resources
 D:\QL_TV\QuanLyThuVien\QLTV\obj\Debug\QLTV.QLTacgia.resources
+D:\QL_TV\QuanLyThuVien\QLTV\obj\Debug\QLTV.TKDocgia.resources
+D:\QL_TV\QuanLyThuVien\QLTV\obj\Debug\QLTV.TKTacgia.resources
+D:\QL_TV\QuanLyThuVien\QLTV\obj\Debug\QLTV.TKSach.resources

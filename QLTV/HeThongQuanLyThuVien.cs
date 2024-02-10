@@ -36,6 +36,27 @@ namespace QLTV
             QLPhieumuon phieumuon = new QLPhieumuon();
             phieumuon.MdiParent = this;
             phieumuon.Show();
-        }    
+        }
+
+        private void thốngKêĐộcGiảToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TKDocgia tk = new TKDocgia();
+            tk.MdiParent = this;
+            tk.Show();
+        }
+
+        private void thốngKêTácGiảToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TKTacgia tg = new TKTacgia();
+            tg.MdiParent = this;
+            tg.Show();
+        }
+
+        private void thốngKêSáchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TKSach tKSach = new TKSach();
+            tKSach.MdiParent = this;
+            tKSach.Show();
+        }
     }
 }

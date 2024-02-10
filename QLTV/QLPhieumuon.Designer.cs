@@ -207,8 +207,9 @@
             this.dtgPhieumuon.ReadOnly = true;
             this.dtgPhieumuon.RowHeadersWidth = 62;
             this.dtgPhieumuon.RowTemplate.Height = 28;
-            this.dtgPhieumuon.Size = new System.Drawing.Size(1500, 445);
+            this.dtgPhieumuon.Size = new System.Drawing.Size(1470, 561);
             this.dtgPhieumuon.TabIndex = 17;
+            this.dtgPhieumuon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPhieumuon_CellContentClick);
             this.dtgPhieumuon.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgPhieumuon_CellMouseClick);
             // 
             // Maphieu
