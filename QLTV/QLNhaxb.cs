@@ -116,5 +116,10 @@ namespace QLTV
                 MessageBox.Show("Vui lòng chọn nhà xuất bản để xóa.");
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

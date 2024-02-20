@@ -18,7 +18,6 @@ namespace QLTV
         {
             InitializeComponent();
         }
-        private Tacgia selectedTacGia;
         private void fillCbTG(List<Tacgia> dstg)
         {
             this.cbTtg.DataSource = dstg;
@@ -46,17 +45,22 @@ namespace QLTV
                                 group new { tacgia.MaTG, tacgia.TenTG, sach.Tensach, sach.Soluong } by new { tacgia.MaTG, tacgia.TenTG, sach.Tensach, sach.Soluong } into g
                                 select new
                                 {
-                                    g.Key.MaTG,
-                                    g.Key.TenTG,
-                                    g.Key.Tensach,
-                                    g.Key.Soluong
+                                   Mã_tác_giả= g.Key.MaTG,
+                                    Tên_tác_giả =g.Key.TenTG,
+                                    Tên_sách = g.Key.Tensach,
+                                    Số_lượng = g.Key.Soluong
                                 };
-                    int tongSoSach = query.Sum(sach => sach.Soluong ?? 0);
+                    int tongSoSach = query.Sum(sach => sach.Số_lượng ?? 0);
                     txtTs.Text = tongSoSach.ToString();
 
                     dataGridView1.DataSource = query.ToList();
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

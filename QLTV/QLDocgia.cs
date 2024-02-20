@@ -192,6 +192,11 @@ namespace QLTV
                 txtSdt.Text = sodt;
             }
         }
+
+        private void thoat_Click(object sender, EventArgs e)
+        {
+            this.Close(); // Đóng Form 2
+        }
     }
 }
 

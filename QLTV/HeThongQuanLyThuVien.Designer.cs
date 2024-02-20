@@ -50,7 +50,7 @@
             this.thốngKêToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1645, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1803, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -89,21 +89,21 @@
             // thốngKêĐộcGiảToolStripMenuItem
             // 
             this.thốngKêĐộcGiảToolStripMenuItem.Name = "thốngKêĐộcGiảToolStripMenuItem";
-            this.thốngKêĐộcGiảToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.thốngKêĐộcGiảToolStripMenuItem.Size = new System.Drawing.Size(257, 34);
             this.thốngKêĐộcGiảToolStripMenuItem.Text = "Thống kê độc giả ";
             this.thốngKêĐộcGiảToolStripMenuItem.Click += new System.EventHandler(this.thốngKêĐộcGiảToolStripMenuItem_Click);
             // 
             // thốngKêTácGiảToolStripMenuItem
             // 
             this.thốngKêTácGiảToolStripMenuItem.Name = "thốngKêTácGiảToolStripMenuItem";
-            this.thốngKêTácGiảToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.thốngKêTácGiảToolStripMenuItem.Size = new System.Drawing.Size(257, 34);
             this.thốngKêTácGiảToolStripMenuItem.Text = "Thống kê tác giả ";
             this.thốngKêTácGiảToolStripMenuItem.Click += new System.EventHandler(this.thốngKêTácGiảToolStripMenuItem_Click);
             // 
             // thốngKêSáchToolStripMenuItem
             // 
             this.thốngKêSáchToolStripMenuItem.Name = "thốngKêSáchToolStripMenuItem";
-            this.thốngKêSáchToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.thốngKêSáchToolStripMenuItem.Size = new System.Drawing.Size(257, 34);
             this.thốngKêSáchToolStripMenuItem.Text = "Thống kê sách";
             this.thốngKêSáchToolStripMenuItem.Click += new System.EventHandler(this.thốngKêSáchToolStripMenuItem_Click);
             // 
@@ -111,13 +111,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1645, 1050);
+            this.ClientSize = new System.Drawing.Size(1803, 1050);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "HeThongQuanLyThuVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HeThongQuanLyThuVien";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

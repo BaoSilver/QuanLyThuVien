@@ -106,8 +106,13 @@ namespace QLTV
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn tác giả để xóa.");
+                MessageBox.Show("Vui lòng chọn  thể loại để xóa.");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

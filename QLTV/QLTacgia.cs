@@ -84,51 +84,6 @@ namespace QLTV
 
             MessageBox.Show("Đã thêm tác giả mới thành công!");
         }
-
-        private void btnUpd_Click(object sender, EventArgs e)
-        {
-            string ma = txtMtg.Text.Trim();
-            string ten = txtTentg.Text.Trim();
-
-            if (string.IsNullOrEmpty(ma) || string.IsNullOrEmpty(ten))
-            {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin mã và tên nhà xuất bản.");
-                return;
-            }
-            Tacgia existingTacGia = db.Tacgias.FirstOrDefault(tg => tg.MaTG == ma || tg.TenTG == ten);
-
-            if (existingTacGia != null)
-            {
-                MessageBox.Show("Dữ liệu đã tồn tại. Vui lòng nhập dữ liệu khác.");
-                return;
-            }
-
-     
-            if (db.Tacgias.Any(tg => tg.MaTG == ma))
-            {
-                existingTacGia = db.Tacgias.First(tg => tg.MaTG == ma);
-                existingTacGia.TenTG = ten;
-            }
-            else
-            {
-                Tacgia newTacGia = new Tacgia
-                {
-                    MaTG = ma,
-                    TenTG = ten
-                };
-
-                db.Tacgias.Add(newTacGia);
-            }
-
-            db.SaveChanges();
-
-            List<Tacgia> tacg = db.Tacgias.ToList();
-            FillgridQLtacgia(tacg);
-
-            MessageBox.Show("Đã cập nhật tác giả thành công!");
-
-        }
-
         private void btnXoa_Click(object sender, EventArgs e)
         {
             if (dtgTacgia.SelectedRows.Count > 0)
@@ -170,6 +125,11 @@ namespace QLTV
             {
                 MessageBox.Show("Vui lòng chọn tác giả để xóa.");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
  }

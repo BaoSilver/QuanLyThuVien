@@ -42,15 +42,23 @@ namespace QLTV
                                 where sach.Masach == selectedSach.Masach
                                 select new
                                 {
-                                    sach.Masach,
-                                    sach.Tensach,
-                                    sach.Soluong,
-                                    SoLuongChoMuon = context.Phieumuons.Count(pm => pm.Masach == sach.Masach)
+                                    Mã_sách = sach.Masach,
+                                    Tên_sách = sach.Tensach,
+                                    Số_lượng_còn = sach.Soluong,
+                                    Số_lượng_mượn = context.Phieumuons.Count(pm => pm.Masach == sach.Masach)
                                 };
 
+                    int tongSoSach = query.Sum(sach => sach.Số_lượng_còn ?? 0);
+                    txtTss.Text = tongSoSach.ToString();
                     dataGridView1.DataSource = query.ToList();
                 }
             }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

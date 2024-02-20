@@ -37,7 +37,6 @@ D:\QLTV\QLTV\obj\Debug\QLTV.csproj.CopyComplete
 D:\QLTV\QLTV\obj\Debug\QLTV.exe
 D:\QLTV\QLTV\obj\Debug\QLTV.pdb
 D:\QL_TV\QuanLyThuVien\QLTV\obj\Debug\QLTV.csproj.AssemblyReference.cache
-D:\QL_TV\QuanLyThuVien\QLTV\obj\Debug\QLTV.DangNhap.resources
 D:\QL_TV\QuanLyThuVien\QLTV\obj\Debug\QLTV.QLDocgia.resources
 D:\QL_TV\QuanLyThuVien\QLTV\obj\Debug\QLTV.HeThongQuanLyThuVien.resources
 D:\QL_TV\QuanLyThuVien\QLTV\obj\Debug\QLTV.QLPhieumuon.resources

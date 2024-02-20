@@ -235,5 +235,10 @@ namespace QLTV
         {
 
         }
+
+        private void thoat1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Drawing;
 using System.Linq;
@@ -23,7 +24,7 @@ namespace QLTV
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -50,7 +51,7 @@ namespace QLTV
             this.cbTheloai.DisplayMember = "TenLoai";
             this.cbTheloai.ValueMember = "MaLoai";
         }
-        private void fillCbTacgia(List<Tacgia> tg) 
+        private void fillCbTacgia(List<Tacgia> tg)
         {
             this.cbTacgia.DataSource = tg;
             this.cbTacgia.DisplayMember = "TenTG";
@@ -73,6 +74,11 @@ namespace QLTV
             fillCbNhaxb(nhaxb);
             List<Tacgia> tacgia = db.Tacgias.ToList();
             fillCbTacgia(tacgia);
+            txtmasach.Text = "";
+            txttensach.Text = "";
+            cbTacgia.SelectedIndex = -1; // Chọn mục "Trống" (nếu có)
+            cbTheloai.SelectedIndex = -1;
+            cbNhaxb.SelectedIndex = -1;
         }
 
         private void themcapnhat1_Click(object sender, EventArgs e)
@@ -160,7 +166,7 @@ namespace QLTV
         private void dtgvQLS_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-           
+
         }
 
         private void btnUpd_Click(object sender, EventArgs e)
@@ -241,40 +247,56 @@ namespace QLTV
             QLNhaxb qLNhaxb = new QLNhaxb();
             qLNhaxb.Show();
         }
+        private List<Sach> SearchByMaSach(int maSach)
+        {
+            // Truy vấn lấy sách có mã sách bằng "maSach"
+            var sach = db.Saches.Where(s => s.Masach == maSach).FirstOrDefault();
+
+            // Tạo danh sách rỗng nếu không tìm thấy sách
+            if (sach == null)
+            {
+                return new List<Sach>();
+            }
+
+            // Tạo danh sách chứa sách tìm được
+            return new List<Sach>() { sach };
+        }
+
 
         private void timkiem_Click(object sender, EventArgs e)
         {
-            //string tuKhoa = txtSearch.Text.Trim();
-            //string loaiTimKiem = cbSearch.SelectedItem?.ToString();
-            //if (string.IsNullOrEmpty(tuKhoa) || string.IsNullOrEmpty(loaiTimKiem))
-            //{
-            //    MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm và chọn loại tìm kiếm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
-            //List<Sach> ketQuaTimKiem = new List<Sach>();
-            //if (loaiTimKiem == "Mã Sách")
-            //{
-            //    ketQuaTimKiem = db.Saches
-            //        .Where(sach => sach.Masach.Contains(tuKhoa))
-            //        .ToList();
-            //}
-            //else if (loaiTimKiem == "Tên Sách")
-            //{
-            //    ketQuaTimKiem = db.Saches
-            //        .Where(sach => sach.Tensach.Contains(tuKhoa))
-            //        .ToList();
-            //}
-            //fillGridSach(ketQuaTimKiem);
-            //if (ketQuaTimKiem.Count == 0)
-            //{
-            //    MessageBox.Show("Không tìm thấy sách với từ khóa tìm kiếm đã nhập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
+            string maHoacTen = txtSearch.Text.Trim();
+            List<Sach> danhSachSach = new List<Sach>();
+
+            if (cbSearch.SelectedItem.ToString() == "Mã sách")
+            {
+                int maSach;
+                if (int.TryParse(maHoacTen, out maSach))
+                {
+                    // Lấy sách đầu tiên từ kết quả tìm kiếm
+                    var sach = SearchByMaSach(maSach).FirstOrDefault();
+                    danhSachSach = sach == null ? new List<Sach>() : new List<Sach>() { sach };
+                }
+            }
+            else if (cbSearch.SelectedItem.ToString() == "Tên sách")
+            {
+                danhSachSach = db.Saches.Where(x => x.Tensach.Contains(maHoacTen)).ToList();
+            }
+
+            dtgvQLS.Rows.Clear();
+
+            // Sửa đổi: Truyền danh sách sách vào FillgridSach
+            FillgridSach(danhSachSach);
         }
 
+        private void cbSearch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+         
         }
-        
-      
     }
+}
+
+
 
 
 

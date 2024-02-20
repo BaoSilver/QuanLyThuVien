@@ -60,5 +60,10 @@ namespace QLTV
             List<Docgia> dg = db.Docgias.ToList();
             fillCbDG(dg);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
